@@ -1,0 +1,200 @@
+- id: '1695674426074'
+  alias: Hurry up Harry
+  description: Wake up Harry on school days
+  trigger:
+  - platform: time
+    at: 06:40:00
+  condition:
+  - condition: time
+    after: 06:30:00
+  action:
+  - device_id: afa3400cdc682c99a2f6e2c7d15c841d
+    domain: cover
+    entity_id: 38ffe630f76f3f14bda5a07a02f1686c
+    type: open
+  mode: single
+- id: '1695674821794'
+  alias: Lounge shutdown
+  description: ''
+  trigger:
+  - platform: time_pattern
+    hours: '*'
+    minutes: '0'
+    seconds: '00'
+  - platform: time_pattern
+    hours: '*'
+    minutes: '30'
+    seconds: '00'
+  condition:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 1549f86153a452d8ed0d27269d44711b
+      domain: media_player
+      entity_id: 057db4e5c83d42909ef1cdbf3da31893
+      type: is_on
+  - condition: sun
+    after: sunset
+  action:
+  - type: turn_off
+    device_id: f28ef1369d681da0864f93dd84ca1173
+    entity_id: bc9bf5d0986a4604ee2378cdc6056659
+    domain: light
+  - type: turn_off
+    device_id: 5c8db7f0d99840a97c96745c88ac2760
+    entity_id: 36157998b733039f46a6abf8fd910461
+    domain: light
+  - type: turn_off
+    device_id: 60207efd546c5cd994402663d4ea9dfd
+    entity_id: 2781e0728d32d43503deeafd5230c6b2
+    domain: light
+  - type: turn_off
+    device_id: 475929fb3044afa540836abea13cca71
+    entity_id: c523d36fde900e2410ca43c407c4c901
+    domain: light
+  - type: turn_off
+    device_id: c5bc111f0ceba8e64039094fdd22aead
+    entity_id: 9d7bd18f3a79f41b6608df8b0bf7a374
+    domain: light
+  mode: single
+- id: '1695710724429'
+  alias: Tommy can you hear me
+  description: Open Tommy's blinds
+  trigger:
+  - platform: time
+    at: 07:30:00
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      after: 07:00:00
+  action:
+  - device_id: 234e0e3df0b3fe43a1ac7589929f30ac
+    domain: cover
+    entity_id: 2159b2de8126a5daff900fa9415fe4f1
+    type: open
+  mode: single
+- id: '1695716345183'
+  alias: TV time
+  description: Set the lights for TV time
+  trigger:
+  - device_id: 1a45c0b28f91e75b7c8a13a6b4151cfe
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      before: sunrise
+      after: sunset
+  action:
+  - type: turn_on
+    device_id: 475929fb3044afa540836abea13cca71
+    entity_id: c523d36fde900e2410ca43c407c4c901
+    domain: light
+  - type: turn_off
+    device_id: f28ef1369d681da0864f93dd84ca1173
+    entity_id: bc9bf5d0986a4604ee2378cdc6056659
+    domain: light
+  - type: turn_off
+    device_id: 5c8db7f0d99840a97c96745c88ac2760
+    entity_id: 36157998b733039f46a6abf8fd910461
+    domain: light
+  - type: turn_off
+    device_id: 60207efd546c5cd994402663d4ea9dfd
+    entity_id: 2781e0728d32d43503deeafd5230c6b2
+    domain: light
+  - type: turn_on
+    device_id: c5bc111f0ceba8e64039094fdd22aead
+    entity_id: 9d7bd18f3a79f41b6608df8b0bf7a374
+    domain: light
+  - type: turn_off
+    device_id: 3aaba9b5c923a8a286a2e27093f7272b
+    entity_id: 72bd29a365e11d0ddb08b8f48b263960
+    domain: light
+  - type: turn_off
+    device_id: fa435493f4c9f50b8ded4ecf874d5574
+    entity_id: d9cb79c7f9841152044027715cfbe9f4
+    domain: light
+  - type: turn_off
+    device_id: 8272b094c57db0141d7e71a2629d5d9b
+    entity_id: d92809a62ccf3ebbb2a79f5e7074d0fc
+    domain: light
+  mode: single
+- id: '1695720553256'
+  alias: Lounge lights off
+  description: ''
+  trigger:
+  - device_id: 1a45c0b28f91e75b7c8a13a6b4151cfe
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_off
+  condition: []
+  action:
+  - type: turn_off
+    device_id: f28ef1369d681da0864f93dd84ca1173
+    entity_id: bc9bf5d0986a4604ee2378cdc6056659
+    domain: light
+  - type: turn_off
+    device_id: 5c8db7f0d99840a97c96745c88ac2760
+    entity_id: 36157998b733039f46a6abf8fd910461
+    domain: light
+  - type: turn_off
+    device_id: 60207efd546c5cd994402663d4ea9dfd
+    entity_id: 2781e0728d32d43503deeafd5230c6b2
+    domain: light
+  mode: single
+- id: '1695727744981'
+  alias: Octopus energy saving indicator
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.octopus_energy_saving_sessions
+    attribute: next_joined_event_start
+  condition: []
+  action:
+  - device_id: 60207efd546c5cd994402663d4ea9dfd
+    domain: light
+    entity_id: 2781e0728d32d43503deeafd5230c6b2
+    type: brightness_increase
+  mode: single
+- id: '1695755285856'
+  alias: Sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition: []
+  action:
+  - device_id: afa3400cdc682c99a2f6e2c7d15c841d
+    domain: cover
+    entity_id: 38ffe630f76f3f14bda5a07a02f1686c
+    type: close
+  - device_id: 234e0e3df0b3fe43a1ac7589929f30ac
+    domain: cover
+    entity_id: 2159b2de8126a5daff900fa9415fe4f1
+    type: close
+  mode: single
+- id: '1695756548454'
+  alias: Some light in the dining room
+  description: ''
+  trigger:
+  - device_id: 1a45c0b28f91e75b7c8a13a6b4151cfe
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: dim_up
+  condition:
+  - condition: sun
+    after: sunset
+  action:
+  - type: turn_on
+    device_id: 3aaba9b5c923a8a286a2e27093f7272b
+    entity_id: 72bd29a365e11d0ddb08b8f48b263960
+    domain: light
+  mode: single

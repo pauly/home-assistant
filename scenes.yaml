@@ -1,0 +1,133 @@
+- id: '1695670402978'
+  name: Brown chair TV
+  entities:
+    sensor.brown_chair_button_battery:
+      state_class: measurement
+      unit_of_measurement: '%'
+      device_class: battery
+      friendly_name: Brown chair button Battery
+      state: '75'
+    media_player.lg_webos_tv_oled65cx6la:
+      source_list:
+      - Amazon Alexa
+      - Apple TV
+      - Art Gallery
+      - BBC Sounds
+      - BBC iPlayer
+      - Brain Puzzle
+      - BritBox
+      - CHILI
+      - Disney+
+      - Free Games by PlayWorks
+      - HDMI 1
+      - HDMI 2
+      - HDMI 4
+      - ITVX
+      - LG Channels
+      - LG Content Store
+      - Live TV
+      - Music
+      - My5
+      - NOW TV
+      - Netflix
+      - Photo & Video
+      - Pluto TV
+      - Prime Video
+      - Rakuten TV
+      - Shop Time
+      - Sky Store
+      - Sports Alert
+      - Spotify - Music and Podcasts
+      - TV Cast
+      - Web Browser
+      - XBOX
+      - YouTube
+      - YouTube Kids
+      volume_level: 0.1
+      is_volume_muted: false
+      source: Prime Video
+      sound_output: external_optical
+      assumed_state: true
+      device_class: tv
+      entity_picture: /api/media_player_proxy/media_player.lg_webos_tv_oled65cx6la?token=423018b4195e663cd9c02ef0b782b9ce10473894d31e0c9b06a0089c379953f2&cache=6040d92e92e7e6f0
+      friendly_name: '[LG] webOS TV OLED65CX6LA'
+      supported_features: 24381
+      state: 'on'
+    light.tradfri_bulb_31:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      friendly_name: Dining room pendant
+      supported_features: 32
+      state: 'off'
+    light.lounge_light1:
+      supported_color_modes:
+      - hs
+      friendly_name: lounge light1
+      supported_features: 32
+      state: 'off'
+    light.lounge_light2:
+      supported_color_modes:
+      - hs
+      friendly_name: lounge light2
+      supported_features: 32
+      state: 'off'
+    light.lounge_lamp1:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 50
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      friendly_name: lounge lamp1
+      supported_features: 32
+      state: 'on'
+    light.lounge_lamp2:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 53
+      color_temp_kelvin: 2202
+      color_temp: 454
+      hs_color:
+      - 29.79
+      - 84.553
+      rgb_color:
+      - 255
+      - 146
+      - 39
+      xy_color:
+      - 0.579
+      - 0.388
+      friendly_name: lounge lamp2
+      supported_features: 32
+      state: 'on'
+    light.lounge_light3:
+      supported_color_modes:
+      - hs
+      friendly_name: lounge light3
+      supported_features: 32
+      state: 'off'
+  icon: mdi:seat
+  metadata: {}
